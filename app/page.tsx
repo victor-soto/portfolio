@@ -8,6 +8,9 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Mail, MapPin, Calendar } from "lucide-react"
+import experience from "@/data/experience.json"
+import projects from "@/data/projects.json"
+import { siteConfig } from "@/config/site.config"
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about")
@@ -103,83 +106,6 @@ export default function Portfolio() {
     setFormData({ name: "", email: "", message: "" })
   }
 
-  const experience = [
-    {
-      company: "TechCorp Solutions",
-      position: "Senior Software Engineer",
-      duration: "2022 - Present",
-      location: "San Francisco, CA",
-      description: "Leading development of scalable web applications using modern JavaScript frameworks. Mentoring junior developers and implementing best practices for code quality and performance.",
-      technologies: ["React", "Node.js", "TypeScript", "AWS", "Docker"],
-      achievements: [
-        "Reduced application load time by 40% through optimization",
-        "Led a team of 5 developers on a major product launch",
-        "Implemented CI/CD pipeline reducing deployment time by 60%"
-      ]
-    },
-    {
-      company: "StartupXYZ",
-      position: "Full Stack Developer",
-      duration: "2020 - 2022",
-      location: "Remote",
-      description: "Built and maintained multiple web applications from concept to deployment. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-      technologies: ["Next.js", "Python", "PostgreSQL", "Redis", "Vercel"],
-      achievements: [
-        "Developed 3 production applications serving 10K+ users",
-        "Improved database query performance by 50%",
-        "Implemented automated testing increasing coverage to 85%"
-      ]
-    },
-    {
-      company: "Digital Innovations Inc",
-      position: "Frontend Developer",
-      duration: "2018 - 2020",
-      location: "New York, NY",
-      description: "Specialized in creating responsive and accessible user interfaces. Worked closely with designers to implement pixel-perfect designs and optimize user experience.",
-      technologies: ["React", "Vue.js", "Sass", "Webpack", "Jest"],
-      achievements: [
-        "Built 10+ responsive web applications",
-        "Reduced bundle size by 30% through code splitting",
-        "Achieved 95% accessibility score across all projects"
-      ]
-    }
-  ]
-
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description:
-        "Full-stack e-commerce solution built with Next.js, TypeScript, and Stripe integration. Features include user authentication, product management, and order processing.",
-      technologies: ["Next.js", "TypeScript", "Stripe", "Prisma"],
-      demoUrl: "https://demo-ecommerce.vercel.app",
-      githubUrl: "https://github.com/username/ecommerce-platform",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      demoUrl: "https://taskmanager-demo.vercel.app",
-      githubUrl: "https://github.com/username/task-manager",
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "Interactive weather dashboard with location-based forecasts, historical data visualization, and responsive design for all devices.",
-      technologies: ["Vue.js", "Chart.js", "OpenWeather API", "Tailwind"],
-      demoUrl: "https://weather-dashboard-demo.vercel.app",
-      githubUrl: "https://github.com/username/weather-dashboard",
-    },
-    {
-      title: "AI Chat Application",
-      description:
-        "Modern chat application powered by AI with real-time messaging, smart responses, and customizable chat themes.",
-      technologies: ["React", "OpenAI API", "WebSocket", "Express"],
-      demoUrl: "https://ai-chat-demo.vercel.app",
-      githubUrl: "https://github.com/username/ai-chat-app",
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <div className="fixed inset-0 bg-gradient-to-br from-background via-background to-primary/5 animate-pulse-slow pointer-events-none" />
@@ -249,7 +175,7 @@ export default function Portfolio() {
         {/* Secondary Navigation Section */}
         <div className="flex flex-col space-y-3 pt-4 border-t border-border/30">
           <a
-            href="https://github.com/johndeveloper"
+            href={siteConfig.links.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-all duration-300 flex items-center gap-2 text-sm justify-end hover:scale-110 transform hover:shadow-lg hover:shadow-primary/10"
@@ -269,7 +195,7 @@ export default function Portfolio() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/johndeveloper"
+            href={siteConfig.links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-all duration-300 flex items-center gap-2 text-sm justify-end hover:scale-110 transform hover:shadow-lg hover:shadow-primary/10"
@@ -288,15 +214,18 @@ export default function Portfolio() {
       </nav>
 
       {/* Content Section */}
-      <div className="overflow-y-auto mr-32 relative z-10">
+      {/* <div className="overflow-y-auto mr-32 relative z-10"> */}
+        <div className="mr-32 relative z-10">
         {/* About Section */}
         <section id="about" className="p-8 lg:p-12 min-h-screen flex items-center fade-in-element">
           <div className="max-w-5xl mx-auto w-full">
             <div className="mb-12" style={{ transform: mounted ? `translateY(${scrollY * 0.1}px)` : 'none' }}>
               <h1 className="text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent animate-gradient">
-                John Developer
+                {siteConfig.name}
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 animate-fade-in-up">Software Engineer</p>
+              <p className="text-sm text-muted-foreground mb-8 animate-fade-in-up">
+                {siteConfig.position}
+              </p>
             </div>
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6 animate-fade-in-left">
@@ -517,7 +446,7 @@ export default function Portfolio() {
                 </p>
                 <div className="flex items-center gap-2 text-muted-foreground mb-4 hover:text-primary transition-all duration-300 hover:translate-x-2 transform">
                   <Mail className="w-5 h-5" />
-                  john.developer@email.com
+                  {siteConfig.links.email}
                 </div>
               </div>
               <div className="animate-fade-in-right">

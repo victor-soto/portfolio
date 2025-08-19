@@ -1,0 +1,41 @@
+[
+    {
+      "company": "TechCorp Solutions",
+      "position": "Senior Software Engineer",
+      "duration": "2022 - Present",
+      "location": "San Francisco, CA",
+      "description": "Leading development of scalable web applications using modern JavaScript frameworks. Mentoring junior developers and implementing best practices for code quality and performance.",
+      "technologies": ["React", "Node.js", "TypeScript", "AWS", "Docker"],
+      "achievements": [
+        "Reduced application load time by 40% through optimization",
+        "Led a team of 5 developers on a major product launch",
+        "Implemented CI/CD pipeline reducing deployment time by 60%"
+      ]
+    },
+    {
+      "company": "StartupXYZ",
+      "position": "Full Stack Developer",
+      "duration": "2020 - 2022",
+      "location": "Remote",
+      "description": "Built and maintained multiple web applications from concept to deployment. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+      "technologies": ["Next.js", "Python", "PostgreSQL", "Redis", "Vercel"],
+      "achievements": [
+        "Developed 3 production applications serving 10K+ users",
+        "Improved database query performance by 50%",
+        "Implemented automated testing increasing coverage to 85%"
+      ]
+    },
+    {
+      "company": "Digital Innovations Inc",
+      "position": "Frontend Developer",
+      "duration": "2018 - 2020",
+      "location": "New York, NY",
+      "description": "Specialized in creating responsive and accessible user interfaces. Worked closely with designers to implement pixel-perfect designs and optimize user experience.",
+      "technologies": ["React", "Vue.js", "Sass", "Webpack", "Jest"],
+      "achievements": [
+        "Built 10+ responsive web applications",
+        "Reduced bundle size by 30% through code splitting",
+        "Achieved 95% accessibility score across all projects"
+      ]
+    }
+  ]

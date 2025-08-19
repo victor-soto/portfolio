@@ -3,11 +3,18 @@ import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
+import { siteConfig } from '@/config/site.config' 
 
 export const metadata: Metadata = {
-  title: 'John Developer - Software Engineer',
-  description: 'Professional portfolio of John Developer, a software engineer specializing in modern web technologies and scalable applications.',
+  title: `${siteConfig.name} - ${siteConfig.position}`,
+  description: siteConfig.description,
   generator: 'Next.js',
+  openGraph: {
+    title: siteConfig.site.title,
+    description: siteConfig.site.description,
+    url: siteConfig.url,
+    siteName: siteConfig.site.title,
+  },
 }
 
 export default function RootLayout({
@@ -17,11 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           {children}
