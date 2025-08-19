@@ -9,11 +9,33 @@ export const metadata: Metadata = {
   title: `${siteConfig.name} - ${siteConfig.position}`,
   description: siteConfig.description,
   generator: 'Next.js',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-icon.png',
+  },
+  manifest: '/manifest.json',
   openGraph: {
     title: siteConfig.site.title,
     description: siteConfig.site.description,
     url: siteConfig.url,
     siteName: siteConfig.site.title,
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - ${siteConfig.position}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.site.title,
+    description: siteConfig.site.description,
+    images: ['/og-image.png'],
   },
 }
 
