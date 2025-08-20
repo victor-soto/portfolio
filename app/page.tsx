@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Mail, MapPin, Calendar, Menu, X } from "lucide-react"
 import experience from "@/data/experience.json"
 import projects from "@/data/projects.json"
+import about from "@/data/about.json"
 import { siteConfig } from "@/config/site.config"
 
 export default function Portfolio() {
@@ -44,6 +45,21 @@ export default function Portfolio() {
         duration: 10 + Math.random() * 20
       }))
     )
+
+    // Handle direct hash navigation on page load
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.slice(1) // Remove the # symbol
+      if (hash && ['about', 'experience', 'projects', 'contact'].includes(hash)) {
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+          const element = document.getElementById(hash)
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" })
+            setActiveSection(hash)
+          }
+        }, 100)
+      }
+    }
   }, [])
 
   useEffect(() => {
@@ -96,6 +112,9 @@ export default function Portfolio() {
     if (!mounted) return
     const element = document.getElementById(sectionId)
     if (element) {
+      // Update URL hash
+      window.history.pushState(null, '', `#${sectionId}`)
+      // Smooth scroll to element
       element.scrollIntoView({ behavior: "smooth" })
     }
   }
@@ -139,7 +158,7 @@ export default function Portfolio() {
                   : "text-muted-foreground hover:border-r-2 hover:border-primary/50 hover:pr-4"
               }`}
             >
-              01. About
+              About
             </button>
             <button
               onClick={() => scrollToSection("experience")}
@@ -149,7 +168,7 @@ export default function Portfolio() {
                   : "text-muted-foreground hover:border-r-2 hover:border-primary/50 hover:pr-4"
               }`}
             >
-              02. Experience
+              Experience
             </button>
             <button
               onClick={() => scrollToSection("projects")}
@@ -159,7 +178,7 @@ export default function Portfolio() {
                   : "text-muted-foreground hover:border-r-2 hover:border-primary/50 hover:pr-4"
               }`}
             >
-              03. Projects
+              Projects
             </button>
             <button
               onClick={() => scrollToSection("contact")}
@@ -169,7 +188,7 @@ export default function Portfolio() {
                   : "text-muted-foreground hover:border-r-2 hover:border-primary/50 hover:pr-4"
               }`}
             >
-              04. Contact
+              Contact
             </button>
           </div>
 
@@ -336,17 +355,13 @@ export default function Portfolio() {
             </div>
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6 animate-fade-in-left">
-                <p className="text-muted-foreground mb-6 leading-relaxed text-lg hover:text-foreground transition-colors duration-300">
-                  I'm a passionate software engineer with over 5 years of experience building scalable web applications
-                  and user-centric digital solutions. I specialize in modern JavaScript frameworks, cloud technologies,
-                  and creating seamless user experiences.
-                </p>
-                <p className="text-muted-foreground mb-8 leading-relaxed text-lg hover:text-foreground transition-colors duration-300">
-                  When I'm not coding, you can find me contributing to open-source projects, writing technical articles,
-                  or exploring the latest developments in AI and machine learning.
-                </p>
+                {about.contents.map((content, i) => (
+                  <p key={i} className={`text-muted-foreground mb-${i === 0 ? 6 : 8} leading-relaxed text-lg hover:text-foreground transition-colors duration-300`}>
+                    {content}
+                  </p>
+                ))}
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "AWS", "Docker"].map(
+                  {about.tags.map(
                     (tech, index) => (
                       <Badge
                         key={tech}
