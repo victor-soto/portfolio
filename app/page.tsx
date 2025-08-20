@@ -322,7 +322,7 @@ export default function Portfolio() {
       )}
 
       {/* Content Section */}
-      <div className="overflow-y-auto md:mr-32 relative z-10">
+      <div className="overflow-y-hidden md:mr-32 relative z-10">
         {/* About Section */}
         <section id="about" className="p-8 lg:p-12 min-h-screen flex items-center fade-in-element">
           <div className="max-w-5xl mx-auto w-full">
@@ -374,7 +374,7 @@ export default function Portfolio() {
                 <div className="relative group">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/10 rounded-lg blur-lg group-hover:blur-xl transition-all duration-300 opacity-70 group-hover:opacity-100" />
                   <img
-                    src="/placeholder.svg?height=500&width=400"
+                    src="/victor-soto.jpeg?height=500&width=400"
                     alt="Professional headshot"
                     className="rounded-lg shadow-2xl w-full max-w-md relative z-10 hover:scale-105 transform transition-all duration-500 hover:shadow-3xl hover:shadow-primary/20"
                   />
