@@ -18,18 +18,18 @@ export default function AppleIcon() {
       <div
         style={{
           fontSize: 120,
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          background: 'linear-gradient(135deg, #00BCD4 0%, #00A8CC 100%)',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
+          color: '#1C1C1F',
           fontWeight: 'bold',
           borderRadius: '22px',
         }}
       >
-        JD
+        VS
       </div>
     ),
     // ImageResponse options

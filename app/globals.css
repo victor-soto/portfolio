@@ -6,75 +6,75 @@
 :root {
   --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-mono: 'Geist Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Droid Sans Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
-  --background: oklch(0.12 0.02 240); /* Dark navy background */
-  --foreground: oklch(0.98 0 0); /* Pure white text */
-  --card: oklch(0.16 0.02 240); /* Slightly lighter dark cards */
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.22 0.02 240); /* Popover background */
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.55 0.15 220); /* Blue primary color */
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.35 0.02 240); /* Muted secondary */
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.22 0.02 240);
-  --muted-foreground: oklch(0.7 0.02 240);
-  --accent: oklch(0.6 0.15 220); /* Brighter blue accent */
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.22 0.02 240);
-  --input: oklch(0.16 0.02 240);
-  --ring: oklch(0.55 0.15 220); /* Changed ring color to blue */
-  --chart-1: oklch(0.6 0.15 220); /* Updated chart colors to use blue theme */
-  --chart-2: oklch(0.65 0.2 320);
-  --chart-3: oklch(0.55 0.2 25);
-  --chart-4: oklch(0.7 0.15 45);
-  --chart-5: oklch(0.6 0.2 220);
+  --background: #1C1C1F; /* Soft dark charcoal background */
+  --foreground: #E5E5E5; /* Light gray primary text */
+  --card: #2A2A2D; /* Slightly lighter dark cards */
+  --card-foreground: #E5E5E5;
+  --popover: #2A2A2D; /* Popover background */
+  --popover-foreground: #E5E5E5;
+  --primary: #00BCD4; /* Bright cyan blue accent */
+  --primary-foreground: #1C1C1F;
+  --secondary: #3A3A3D; /* Muted secondary */
+  --secondary-foreground: #E5E5E5;
+  --muted: #2A2A2D;
+  --muted-foreground: #A9A9A9; /* Secondary text color */
+  --accent: #00BCD4; /* Bright cyan blue accent */
+  --accent-foreground: #1C1C1F;
+  --destructive: #FF6B6B;
+  --destructive-foreground: #E5E5E5;
+  --border: #3A3A3D;
+  --input: #2A2A2D;
+  --ring: #00BCD4; /* Cyan blue ring */
+  --chart-1: #00BCD4; /* Updated chart colors to use cyan theme */
+  --chart-2: #00A8CC;
+  --chart-3: #0099B3;
+  --chart-4: #008BA3;
+  --chart-5: #007D93;
   --radius: 0.5rem;
-  --sidebar: oklch(0.16 0.02 240);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.55 0.15 220); /* Changed sidebar primary to blue */
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.22 0.02 240);
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.22 0.02 240);
-  --sidebar-ring: oklch(0.55 0.15 220); /* Changed sidebar ring to blue */
+  --sidebar: #2A2A2D;
+  --sidebar-foreground: #E5E5E5;
+  --sidebar-primary: #00BCD4; /* Cyan blue sidebar primary */
+  --sidebar-primary-foreground: #1C1C1F;
+  --sidebar-accent: #3A3A3D;
+  --sidebar-accent-foreground: #E5E5E5;
+  --sidebar-border: #3A3A3D;
+  --sidebar-ring: #00BCD4; /* Cyan blue sidebar ring */
 }
 
 .dark {
-  /* Dark mode tokens remain the same since this is a dark-first design */
-  --background: oklch(0.12 0.02 240);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.16 0.02 240);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.22 0.02 240);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.55 0.15 220); /* Changed dark mode primary to blue */
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.35 0.02 240);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.22 0.02 240);
-  --muted-foreground: oklch(0.7 0.02 240);
-  --accent: oklch(0.6 0.15 220); /* Changed dark mode accent to blue */
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.22 0.02 240);
-  --input: oklch(0.16 0.02 240);
-  --ring: oklch(0.55 0.15 220); /* Changed dark mode ring to blue */
-  --chart-1: oklch(0.6 0.15 220); /* Updated dark mode chart colors to blue theme */
-  --chart-2: oklch(0.65 0.2 320);
-  --chart-3: oklch(0.55 0.2 25);
-  --chart-4: oklch(0.7 0.15 45);
-  --chart-5: oklch(0.6 0.2 220);
-  --sidebar: oklch(0.16 0.02 240);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.55 0.15 220); /* Changed dark mode sidebar primary to blue */
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.22 0.02 240);
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.22 0.02 240);
-  --sidebar-ring: oklch(0.55 0.15 220); /* Changed dark mode sidebar ring to blue */
+  /* Dark mode tokens - same as root since this is a dark-first design */
+  --background: #1C1C1F;
+  --foreground: #E5E5E5;
+  --card: #2A2A2D;
+  --card-foreground: #E5E5E5;
+  --popover: #2A2A2D;
+  --popover-foreground: #E5E5E5;
+  --primary: #00BCD4;
+  --primary-foreground: #1C1C1F;
+  --secondary: #3A3A3D;
+  --secondary-foreground: #E5E5E5;
+  --muted: #2A2A2D;
+  --muted-foreground: #A9A9A9;
+  --accent: #00BCD4;
+  --accent-foreground: #1C1C1F;
+  --destructive: #FF6B6B;
+  --destructive-foreground: #E5E5E5;
+  --border: #3A3A3D;
+  --input: #2A2A2D;
+  --ring: #00BCD4;
+  --chart-1: #00BCD4;
+  --chart-2: #00A8CC;
+  --chart-3: #0099B3;
+  --chart-4: #008BA3;
+  --chart-5: #007D93;
+  --sidebar: #2A2A2D;
+  --sidebar-foreground: #E5E5E5;
+  --sidebar-primary: #00BCD4;
+  --sidebar-primary-foreground: #1C1C1F;
+  --sidebar-accent: #3A3A3D;
+  --sidebar-accent-foreground: #E5E5E5;
+  --sidebar-border: #3A3A3D;
+  --sidebar-ring: #00BCD4;
 }
 
 @theme inline {
