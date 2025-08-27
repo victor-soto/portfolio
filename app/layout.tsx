@@ -5,41 +5,44 @@ import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import { siteConfig } from '@/config/site.config' 
 
-export const metadata: Metadata = {
-  title: `${siteConfig.name} - ${siteConfig.position}`,
-  description: siteConfig.description,
-  generator: 'Next.js',
-  icons: {
-    icon: [
-      // { url: '/favicon.ico' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-    ],
-    apple: '/apple-icon.png',
-  },
-  manifest: '/manifest.json',
-  openGraph: {
-    title: siteConfig.site.title,
-    description: siteConfig.site.description,
-    url: siteConfig.url,
-    siteName: siteConfig.site.title,
-    type: 'website',
-    locale: 'en_US',
-    images: [
-      {
-        url: `${siteConfig.url}/opengraph-image`,
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.name} - ${siteConfig.position}`,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteConfig.site.title,
-    description: siteConfig.site.description,
-    creator: '@victorsoto',
-    images: [`${siteConfig.url}/opengraph-image`],
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || siteConfig.url
+
+  return {
+    title: `${siteConfig.name} - ${siteConfig.position}`,
+    description: siteConfig.description,
+    generator: 'Next.js',
+    icons: {
+      icon: [
+        { url: '/favicon.svg', type: 'image/svg+xml' },
+      ],
+      apple: '/apple-icon.png',
+    },
+    manifest: '/manifest.json',
+    openGraph: {
+      title: siteConfig.site.title,
+      description: siteConfig.site.description,
+      url: baseUrl,
+      siteName: siteConfig.site.title,
+      type: 'website',
+      locale: 'en_US',
+      images: [
+        {
+          url: `${baseUrl}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${siteConfig.name} - ${siteConfig.position}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: siteConfig.site.title,
+      description: siteConfig.site.description,
+      creator: '@victorsoto',
+      images: [`${baseUrl}/opengraph-image`],
+    },
+  }
 }
 
 export default function RootLayout({
