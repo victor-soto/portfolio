@@ -1,41 +1,86 @@
 [
     {
-      "company": "TechCorp Solutions",
-      "position": "Senior Software Engineer",
-      "duration": "2022 - Present",
-      "location": "San Francisco, CA",
-      "description": "Leading development of scalable web applications using modern JavaScript frameworks. Mentoring junior developers and implementing best practices for code quality and performance.",
-      "technologies": ["React", "Node.js", "TypeScript", "AWS", "Docker"],
-      "achievements": [
-        "Reduced application load time by 40% through optimization",
-        "Led a team of 5 developers on a major product launch",
-        "Implemented CI/CD pipeline reducing deployment time by 60%"
-      ]
-    },
-    {
-      "company": "StartupXYZ",
-      "position": "Full Stack Developer",
-      "duration": "2020 - 2022",
+      "company": "Forward",
+      "position": "Senior Backend Software Engineer",
+      "duration": "2023 - Present",
       "location": "Remote",
-      "description": "Built and maintained multiple web applications from concept to deployment. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-      "technologies": ["Next.js", "Python", "PostgreSQL", "Redis", "Vercel"],
+      "description": "At Forward, I developed and maintained a platform of components and tools to support U.S. public sector leaders, improving efficiency and compliance. I enhanced communication services for government programs through SMS, calls, video conferencing, and email, while designing API improvements that cut response times by 50%. I built a scalable service for multichannel notifications, strengthened API security, and optimized performance with caching, AWS cost reductions of 20%, and database tuning. Additionally, I delivered key features requested by Product Managers, automating processes and reducing manual work by 50%.",
+      "technologies": ["Javascript", "Typescript", "NestJS", "NodeJS", "Kafka", "React", "AWS", "Docker", "PostgreSQL", "Redis", "SQL Server", "Sumo Logic"],
       "achievements": [
-        "Developed 3 production applications serving 10K+ users",
-        "Improved database query performance by 50%",
-        "Implemented automated testing increasing coverage to 85%"
+        "Enhanced communication services for government programs via SMS, calls, video conferencing, and email.",
+        "Reduced API response times by 50% through improved error handling.",
+        "Built a scalable multichannel notification service for complex workflows.",
+        "Strengthened API security and improved performance using caching.",
+        "Optimized AWS services, achieving a 20% cost reduction without impacting availability.",
+        "Boosted database performance with stored procedures and ORM tuning.",
+        "Automated internal processes, cutting manual work by 50%."
       ]
     },
     {
-      "company": "Digital Innovations Inc",
-      "position": "Frontend Developer",
-      "duration": "2018 - 2020",
-      "location": "New York, NY",
-      "description": "Specialized in creating responsive and accessible user interfaces. Worked closely with designers to implement pixel-perfect designs and optimize user experience.",
-      "technologies": ["React", "Vue.js", "Sass", "Webpack", "Jest"],
+      "company": "Everis & Banco de Credito del Peru",
+      "position": "Backend Java Software Engineer",
+      "duration": "2019 - 2022",
+      "location": "Lima, Peru",
+      "description": "Built and maintained Java microservices for a banking platform. Collaborated with cross-functional teams to deliver high-quality microservices.",
+      "technologies": ["Java", "Spring Boot", "Spring Cloud", "Spring Security", "Spring Data JPA", "Spring Data Redis", "Spring Data MongoDB", "Azure SQL", "Azure Cosmos DB"],
       "achievements": [
-        "Built 10+ responsive web applications",
-        "Reduced bundle size by 30% through code splitting",
-        "Achieved 95% accessibility score across all projects"
+        "Developed and maintained 10+ Java microservices, improving scalability and deployment speed with Atlas Framework (based on Spring Boot).",
+        "Built high-performance REST APIs with Spring WebFlux and RxJava, improving system response capacity by 35%.",
+        "Managed Azure SQL and Azure Cosmos DB, ensuring high availability and data consistency.",
+        "Worked with Scrum to deliver iterative and high-quality solutions.",
+        "Refactored and developed code following SOLID principles and design patterns, reducing coupling between critical components.",
+        "Wrote unit tests with JUnit 5 under TDD, achieving +85% code coverage.",
+        "Led a team of 3 developers, providing mentorship and promoting collaboration.",
+        "Coordinated with stakeholders to plan releases and solve cross-team blockers."
+      ]
+    },
+    {
+      "company": "bit2bit Americas",
+      "position": "Fullstack developer",
+      "duration": "2018 - 2019",
+      "location": "Cajamarca, Peru",
+      "description": "I was responsible for the development and maintenance of monolithic applications using technologies like ASP.NET and jQuery, while also designing and managing CI/CD pipelines.",
+      "technologies": ["ASP.NET", "jQuery", "CI/CD", "C#", "Angular", "Python", "Docker", "Django", "PostgreSQL", "Redis", "AWS"],
+      "achievements": [
+        "Developed and maintained high-performance monolithic applications with Web API, ASP.NET, and jQuery.",
+        "Designed CI/CD pipelines with Bamboo, Docker, Puppet, and SonarQube, reducing deployment times.",
+        "Managed MySQL databases, optimizing queries and structures for better performance.",
+        "Refactored legacy code using SOLID and design patterns, reducing technical debt.",
+        "Wrote unit tests that increased coverage and reduced production issues.",
+        "Maintained mobile apps in Swift and Kotlin, ensuring compatibility and performance.",
+        "Developed and maintained Full Stack applications with Django and Angular.",
+        "Led a team of 3 people, managing requirements with the Product Owner."
+      ]
+    },
+    {
+      "company": "MD-Teck",
+      "position": "Mid-Senior Developer",
+      "duration": "2017 - 2018",
+      "location": "Cajamarca, Peru",
+      "description": "Developed and maintained Java microservices with Play Framework and MySQL. Refactored existing code applying SOLID and design patterns, improving maintainability. Created unit tests to reduce technical debt and improve quality. Led a team of 3 developers, participating in requirement definition with Product Owners.",
+      "technologies": ["Java", "Play Framework", "MySQL" ],
+      "achievements": [
+        "Developed and maintained Java microservices with Play Framework and MySQL.",
+        "Refactored existing code applying SOLID and design patterns, improving maintainability.",
+        "Created unit tests to reduce technical debt and improve quality.",
+        "Led a team of 3 developers, participating in requirement definition with Product Owners."
+      ]
+    },
+    {
+      "company": "bit2bit Americas",
+      "position": "FullStack Developer",
+      "duration": "2015 - 2018",
+      "location": "Cajamarca, Peru",
+      "description": "Developed and maintained ASP.NET (C#) systems, improving performance and scalability. Designed and managed CI/CD pipelines with Atlassian tools. Maintained and supported mobile apps in Swift and Kotlin. Designed and implemented database models in SQL Server, optimizing queries. Gathered and negotiated requirements with clients. Developed and maintained web apps with Django (Python) and Spring Boot (Java). Installed and configured Atlassian products (Jira, Confluence, Bamboo) for corporate clients.",
+      "technologies": ["ASP.NET", "C#", "AngularJS", "Python", "Docker", "Django", "PostgreSQL", "Redis", "AWS", "Jira", "Confluence", "Bamboo", "SQL Server"],
+      "achievements": [
+        "Developed and maintained ASP.NET (C#) systems, improving performance and scalability.",
+        "Designed and managed CI/CD pipelines with Atlassian tools.",
+        "Maintained and supported mobile apps in Swift and Kotlin.",
+        "Designed and implemented database models in SQL Server, optimizing queries.",
+        "Gathered and negotiated requirements with clients.",
+        "Developed and maintained web apps with Django (Python) and Spring Boot (Java).",
+        "Installed and configured Atlassian products (Jira, Confluence, Bamboo) for corporate clients."
       ]
     }
   ]

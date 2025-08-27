@@ -10,6 +10,6 @@ export const siteConfig = {
   },
   site: {
     title: "Victor Soto | Portfolio",
-    description: "Backend Software Engineer with 14+ years of experience.",
+    description: "Backend Software Engineer with 10+ years of experience.",
   },
 }

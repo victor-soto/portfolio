@@ -353,7 +353,7 @@ export default function Portfolio() {
                 {siteConfig.position}
               </p>
             </div>
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-1 gap-16 items-center">
               <div className="space-y-6 animate-fade-in-left">
                 {about.contents.map((content, i) => (
                   <p key={i} className={`text-muted-foreground mb-${i === 0 ? 6 : 8} leading-relaxed text-lg hover:text-foreground transition-colors duration-300`}>
@@ -377,15 +377,15 @@ export default function Portfolio() {
                 <div className="flex flex-col gap-3 text-muted-foreground">
                   <div className="flex items-center gap-2 hover:text-primary transition-colors duration-300 hover:translate-x-2 transform">
                     <MapPin className="w-5 h-5" />
-                    San Francisco, CA
+                    {about.location}
                   </div>
                   <div className="flex items-center gap-2 hover:text-primary transition-colors duration-300 hover:translate-x-2 transform">
                     <Calendar className="w-5 h-5" />
-                    Available for hire
+                    {about.availability}
                   </div>
                 </div>
               </div>
-              <div className="flex justify-center animate-fade-in-right">
+              {/* <div className="flex justify-center animate-fade-in-right">
                 <div className="relative group">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/10 rounded-lg blur-lg group-hover:blur-xl transition-all duration-300 opacity-70 group-hover:opacity-100" />
                   <img
@@ -393,8 +393,8 @@ export default function Portfolio() {
                     alt="Professional headshot"
                     className="rounded-lg shadow-2xl w-full max-w-md relative z-10 hover:scale-105 transform transition-all duration-500 hover:shadow-3xl hover:shadow-primary/20"
                   />
-                </div>
-              </div>
+                </div> 
+              </div> */}
             </div>
           </div>
         </section>
