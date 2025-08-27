@@ -22,9 +22,11 @@ export const metadata: Metadata = {
     description: siteConfig.site.description,
     url: siteConfig.url,
     siteName: siteConfig.site.title,
+    type: 'website',
+    locale: 'en_US',
     images: [
       {
-        url: '/og-image.png',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} - ${siteConfig.position}`,
@@ -35,7 +37,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.site.title,
     description: siteConfig.site.description,
-    images: ['/og-image.png'],
+    creator: '@victorsoto',
+    images: ['/opengraph-image'],
   },
 }
 
