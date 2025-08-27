@@ -12,6 +12,8 @@ import experience from "@/data/experience.json"
 import projects from "@/data/projects.json"
 import about from "@/data/about.json"
 import { siteConfig } from "@/config/site.config"
+import ProjectsSection from "./components/projects"
+import Footer from "./components/footer"
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about")
@@ -49,7 +51,7 @@ export default function Portfolio() {
     // Handle direct hash navigation on page load
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.slice(1) // Remove the # symbol
-      if (hash && ['about', 'experience', 'projects', 'contact'].includes(hash)) {
+      if (hash && ['about', 'experience', 'projects'].includes(hash)) {
         // Small delay to ensure DOM is ready
         setTimeout(() => {
           const element = document.getElementById(hash)
@@ -66,7 +68,7 @@ export default function Portfolio() {
     if (!mounted) return
 
     const handleScroll = () => {
-      const sections = ["about", "experience", "projects", "contact"]
+      const sections = ["about", "experience", "projects"]
       const scrollPosition = window.scrollY + 100
       setScrollY(window.scrollY)
 
@@ -170,7 +172,7 @@ export default function Portfolio() {
             >
               Experience
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection("projects")}
               className={`text-sm font-medium transition-all duration-500 hover:text-primary text-right hover:scale-110 transform ${
                 activeSection === "projects"
@@ -179,19 +181,9 @@ export default function Portfolio() {
               }`}
             >
               Projects
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className={`text-sm font-medium transition-all duration-500 hover:text-primary text-right hover:scale-110 transform ${
-                activeSection === "contact"
-                  ? "text-primary border-r-2 border-primary pr-4 shadow-lg shadow-primary/20"
-                  : "text-muted-foreground hover:border-r-2 hover:border-primary/50 hover:pr-4"
-              }`}
-            >
-              Contact
-            </button>
+            </button> */}
+            
           </div>
-
         {/* Secondary Navigation Section */}
         <div className="flex flex-col space-y-3 pt-4 border-t border-border/30">
           <a
@@ -478,153 +470,11 @@ export default function Portfolio() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="p-8 lg:p-12 min-h-screen flex items-center fade-in-element">
-          <div className="max-w-5xl mx-auto w-full">
-            <h2 className="text-5xl font-bold text-foreground mb-12 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-              Featured Projects
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {projects.map((project, index) => (
-                <Card
-                  key={index}
-                  className="bg-card/50 border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:scale-105 transform group animate-fade-in-up backdrop-blur-sm"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
-                  <CardHeader className="relative z-10">
-                    <CardTitle className="text-foreground text-xl group-hover:text-primary transition-colors duration-300">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="relative z-10">
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech, techIndex) => (
-                        <Badge
-                          key={tech}
-                          variant="outline"
-                          className="text-xs hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 transform"
-                          style={{ animationDelay: `${techIndex * 50}ms` }}
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    <div className="flex gap-4">
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        asChild
-                        className="hover:bg-primary hover:text-primary-foreground bg-transparent hover:scale-110 transform transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
-                      >
-                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
-                          Live Demo
-                        </a>
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        asChild
-                        className="hover:bg-primary hover:text-primary-foreground bg-transparent hover:scale-110 transform transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
-                      >
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <svg
-                            className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                          GitHub
-                        </a>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="p-8 lg:p-12 min-h-screen flex items-center fade-in-element">
-          <div className="max-w-4xl mx-auto w-full">
-            <h2 className="text-5xl font-bold text-foreground mb-12 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-              Get In Touch
-            </h2>
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div className="animate-fade-in-left">
-                <p className="text-muted-foreground mb-8 leading-relaxed text-lg hover:text-foreground transition-colors duration-300">
-                  I'm always interested in hearing about new opportunities and exciting projects. Whether you have a
-                  question or just want to say hello, feel free to reach out!
-                </p>
-                <div className="flex items-center gap-2 text-muted-foreground mb-4 hover:text-primary transition-all duration-300 hover:translate-x-2 transform">
-                  <Mail className="w-5 h-5" />
-                  {siteConfig.links.email}
-                </div>
-              </div>
-              <div className="animate-fade-in-right">
-                <Card className="bg-card/50 border-border hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 backdrop-blur-sm group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
-                  <CardHeader className="relative z-10">
-                    <CardTitle className="text-foreground">Send me a message</CardTitle>
-                    <CardDescription className="text-muted-foreground">
-                      I'd love to hear about your project or just say hello!
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="relative z-10">
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div>
-                        <Input
-                          placeholder="Your Name"
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          required
-                          className="bg-input border-border text-foreground hover:border-primary/50 focus:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-                        />
-                      </div>
-                      <div>
-                        <Input
-                          type="email"
-                          placeholder="Your Email"
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          required
-                          className="bg-input border-border text-foreground hover:border-primary/50 focus:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-                        />
-                      </div>
-                      <div>
-                        <Textarea
-                          placeholder="Your Message"
-                          value={formData.message}
-                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          required
-                          rows={5}
-                          className="bg-input border-border text-foreground hover:border-primary/50 focus:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-                        />
-                      </div>
-                      <Button
-                        type="submit"
-                        className="w-full bg-primary hover:bg-primary/90 hover:scale-105 transform transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
-                      >
-                        Send Message
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* <ProjectsSection projects={projects} /> */}
       </div>
+
+      {/* Footer */}
+      <Footer />
 
       <style jsx>{`
         @keyframes fade-in {
