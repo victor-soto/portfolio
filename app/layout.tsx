@@ -9,6 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || siteConfig.url
 
   return {
+    metadataBase: new URL(baseUrl),
     title: `${siteConfig.name} - ${siteConfig.position}`,
     description: siteConfig.description,
     generator: 'Next.js',
@@ -28,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: 'en_US',
       images: [
         {
-          url: `${baseUrl}/opengraph-image`,
+          url: '/opengraph-image',
           width: 1200,
           height: 630,
           alt: `${siteConfig.name} - ${siteConfig.position}`,
@@ -40,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: siteConfig.site.title,
       description: siteConfig.site.description,
       creator: '@victorsoto',
-      images: [`${baseUrl}/opengraph-image`],
+      images: ['/opengraph-image'],
     },
   }
 }
