@@ -7,13 +7,15 @@
       "description": "At Forward, I developed and maintained a platform of components and tools to support U.S. public sector leaders, improving efficiency and compliance. I enhanced communication services for government programs through SMS, calls, video conferencing, and email, while designing API improvements that cut response times by 50%. I built a scalable service for multichannel notifications, strengthened API security, and optimized performance with caching, AWS cost reductions of 20%, and database tuning. Additionally, I delivered key features requested by Product Managers, automating processes and reducing manual work by 50%.",
       "technologies": ["Javascript", "Typescript", "NestJS", "NodeJS", "Kafka", "React", "AWS", "Docker", "PostgreSQL", "Redis", "SQL Server", "Sumo Logic"],
       "achievements": [
-        "Enhanced communication services for government programs via SMS, calls, video conferencing, and email.",
-        "Reduced API response times by 50% through improved error handling.",
-        "Built a scalable multichannel notification service for complex workflows.",
-        "Strengthened API security and improved performance using caching.",
-        "Optimized AWS services, achieving a 20% cost reduction without impacting availability.",
-        "Boosted database performance with stored procedures and ORM tuning.",
-        "Automated internal processes, cutting manual work by 50%."
+        "Developed and maintained a full-stack component and tool platform using React and NestJS to train public sector leaders in the U.S., eliminating inefficiencies, improving regulatory compliance, and streamlining access to community-strengthening resources.",
+        "Led the development of a comprehensive user interface using React, including the design and implementation of reusable UI components and a responsive layout to ensure an optimal user experience across devices.",
+        "Built a scalable microservice for multi-channel notifications (SMS, calls, video conferences) with complex conditions using NestJS, and integrated it into the React front end to provide real-time status updates to users.",
+        "Optimized communication services with beneficiaries of government programs through a responsive front-end interface and a robust backend built with NestJS, enabling seamless interactions via SMS, calls, video conferences, and emails.",
+        "Designed and implemented improvements to internal APIs in NestJS for error handling, reducing response times by 50%, and integrated these enhancements into the React application for a smoother user experience.",
+        "Proposed and implemented security enhancements for API communication using NestJS and introduced session data caching, speeding up both backend responses and the front-end's data retrieval times.",
+        "Optimized AWS service usage, achieving a 20% cost reduction without compromising availability, and managed the deployment of both the frontend and backend applications to the cloud.",
+        "Improved database queries through stored procedures and ORM optimization, and designed the data flow to efficiently support the front-end application's data needs.",
+        "Delivered features requested by Product Managers by developing both the UI in React and the corresponding backend logic in NestJS, reducing human interaction by 50% and automating critical internal processes."
       ]
     },
     {
